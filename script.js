@@ -1,18 +1,15 @@
-function callme()
+function palindrome(str)
 {
-    var str = document.getElementById('name').value;
-
-    str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-    let bag = "";
-    for(let i=str.length-1; i>=0; i--)
-    {
-        bag += str.charAt(i);
+     str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+	
+	let left = 0;
+	let right = s.length - 1;
+	while (left < right){
+		if (s[left] !== s[right]){
+			return false;
+		}
+		left++;
+		right--;
 	}
-
-    if(str.trim() === bag.trim())
-    {
-        document.getElementById('result').innerHTML = "true";
-    }else{
-        document.getElementById('result').innerHTML = "false";
-    }
-  }
+	return true;
+}
